@@ -20,7 +20,7 @@ cloudinary.config({
 // ============================================================
 // Middleware
 // ============================================================
-const allowedOrigins = (process.env.FRONTEND_URL || 'http://localhost:5173').split(',').map(s => s.trim());
+const allowedOrigins = (process.env.FRONTEND_URL || 'https://dmi-fest.netlify.app/').split(',').map(s => s.trim());
 app.use(cors({
     origin: (origin, cb) => {
         // Allow requests with no origin (curl, Postman) and matching origins
