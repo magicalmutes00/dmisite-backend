@@ -25,6 +25,11 @@ const VideoSchema = new mongoose.Schema({
     link: String
 }, { _id: false });
 
+const NotificationLinkSchema = new mongoose.Schema({
+    title: String,
+    url: String
+}, { _id: false });
+
 const CoordinatorSchema = new mongoose.Schema({
     name: String,
     image: String,
@@ -89,6 +94,10 @@ const SiteDataSchema = new mongoose.Schema({
             { name: 'John Doe', image: 'https://picsum.photos/300/300?random=21', type: 'sports' },
             { name: 'Jane Smith', image: 'https://picsum.photos/300/300?random=22', type: 'college' }
         ]
+    },
+    notificationLinks: {
+        type: [NotificationLinkSchema],
+        default: []
     }
 }, { timestamps: true });
 
